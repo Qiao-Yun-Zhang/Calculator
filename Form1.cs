@@ -21,127 +21,96 @@ namespace Calculator
         float firstNumber, secondNumber; //firstNumber 儲存第一個數字，secondNumber 儲存第二個數字
         int operators = -1; //記錄選擇哪一種運算符號？0:加、1:減、2:乘、3:除、-1:重新設定
 
-        private void btnOne_Click(object sender, EventArgs e)
+        //增加數字函式
+        private void Add_Number(string _number)
         {
             if (txtNumber.Text == "0")
             {
                 txtNumber.Text = ""; //這個簡單的判斷式，會預先檢查輸入文字框是不是只有一個「0」？是的話，就先清除掉裡面的數字內容
             }
-            txtNumber.Text = txtNumber.Text + "1";
-            //txtNumber.Text += "1";
+            txtNumber.Text = txtNumber.Text + _number;
+        }
+
+        //選擇四則運算函式
+        private void Select_Operator(int _operator)
+        {
+            firstNumber = Convert.ToSingle(txtNumber.Text); //將輸入文字框轉換成浮點數，存入第一個數字的全域變數
+            txtNumber.Text = "0"; //重新將輸入文字框重新設定為0
+            operators = _operator; //選擇「四則運算」號
+        }
+
+        private void btnOne_Click(object sender, EventArgs e)
+        {
+            Add_Number("1"); //只需要呼叫Add_Number函式，並且設定參數為數字1
         }
 
         private void btnTwo_Click(object sender, EventArgs e)
         {
-            if (txtNumber.Text == "0")
-            {
-                txtNumber.Text = ""; //這個簡單的判斷式，會預先檢查輸入文字框是不是只有一個「0」？是的話，就先清除掉裡面的數字內容
-            }
-            txtNumber.Text = txtNumber.Text + "2";
+            Add_Number("2");
         }
 
         private void btnThree_Click(object sender, EventArgs e)
         {
-            if (txtNumber.Text == "0")
-            {
-                txtNumber.Text = ""; //這個簡單的判斷式，會預先檢查輸入文字框是不是只有一個「0」？是的話，就先清除掉裡面的數字內容
-            }
-            txtNumber.Text = txtNumber.Text + "3";
+            Add_Number("3");
         }
 
         private void btnFour_Click(object sender, EventArgs e)
         {
-            if (txtNumber.Text == "0")
-            {
-                txtNumber.Text = ""; //這個簡單的判斷式，會預先檢查輸入文字框是不是只有一個「0」？是的話，就先清除掉裡面的數字內容
-            }
-            txtNumber.Text = txtNumber.Text + "4";
+            Add_Number("4");
         }
 
         private void btnFive_Click(object sender, EventArgs e)
         {
-            if (txtNumber.Text == "0")
-            {
-                txtNumber.Text = ""; //這個簡單的判斷式，會預先檢查輸入文字框是不是只有一個「0」？是的話，就先清除掉裡面的數字內容
-            }
-            txtNumber.Text = txtNumber.Text + "5";
+            Add_Number("5");
         }
 
         private void btnSix_Click(object sender, EventArgs e)
         {
-            if (txtNumber.Text == "0")
-            {
-                txtNumber.Text = ""; //這個簡單的判斷式，會預先檢查輸入文字框是不是只有一個「0」？是的話，就先清除掉裡面的數字內容
-            }
-            txtNumber.Text = txtNumber.Text + "6";
+            Add_Number("6");
         }
 
         private void btnSeven_Click(object sender, EventArgs e)
         {
-            if (txtNumber.Text == "0")
-            {
-                txtNumber.Text = ""; //這個簡單的判斷式，會預先檢查輸入文字框是不是只有一個「0」？是的話，就先清除掉裡面的數字內容
-            }
-            txtNumber.Text = txtNumber.Text + "7";
+            Add_Number("7");
         }
 
         private void btnEight_Click(object sender, EventArgs e)
         {
-            if (txtNumber.Text == "0")
-            {
-                txtNumber.Text = ""; //這個簡單的判斷式，會預先檢查輸入文字框是不是只有一個「0」？是的話，就先清除掉裡面的數字內容
-            }
-            txtNumber.Text = txtNumber.Text + "8";
+            Add_Number("8");
         }
 
         private void btnNine_Click(object sender, EventArgs e)
         {
-            if (txtNumber.Text == "0")
-            {
-                txtNumber.Text = ""; //這個簡單的判斷式，會預先檢查輸入文字框是不是只有一個「0」？是的話，就先清除掉裡面的數字內容
-            }
-            txtNumber.Text = txtNumber.Text + "9";
+            Add_Number("9");
         }
 
         private void btnZero_Click(object sender, EventArgs e)
         {
-            if (txtNumber.Text == "0")
-            {
-                txtNumber.Text = ""; //這個簡單的判斷式，會預先檢查輸入文字框是不是只有一個「0」？是的話，就先清除掉裡面的數字內容
-            }
-            txtNumber.Text = txtNumber.Text + "0";
+            Add_Number("0");
         }
 
         //按下選擇「加」按鍵
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            firstNumber = Convert.ToSingle(txtNumber.Text); //將輸入文字框轉換成浮點數，存入第一個數字的全域變數
-            txtNumber.Text = "0"; //重新將輸入文字框重新設定為0
-            operators = 0; //選擇「加」號
+            Select_Operator(0);
         }
 
         //按下選擇「減」按鍵
         private void btnMinus_Click(object sender, EventArgs e)
         {
-            firstNumber = Convert.ToSingle(txtNumber.Text);
-            txtNumber.Text = "0";
-            operators = 1; //選擇「減」號
+            Select_Operator(1);
         }
 
         //按下選擇「乘」按鍵
         private void btnPlus_Click(object sender, EventArgs e)
         {
-            firstNumber = Convert.ToSingle(txtNumber.Text);
-            txtNumber.Text = "0";
-            operators = 2; //選擇「乘」號
+            Select_Operator(2);
         }
 
         //按下選擇「除」按鍵
         private void btnDivide_Click(object sender, EventArgs e)
         {
-            firstNumber = Convert.ToSingle(txtNumber.Text);
-            txtNumber.Text = "0";
-            operators = 3; //選擇「除」號
+            Select_Operator(3);
         }
 
         //按下選擇「等於」按鍵
