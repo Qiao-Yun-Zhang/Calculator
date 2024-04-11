@@ -47,6 +47,8 @@ namespace Calculator
             this.btnZero = new System.Windows.Forms.Button();
             this.btnEqual = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
+            this.btnBack = new System.Windows.Forms.Button();
+            this.btnPercentage = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // txtNumber
@@ -244,11 +246,35 @@ namespace Calculator
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
+            // btnBack
+            // 
+            this.btnBack.Font = new System.Drawing.Font("微軟正黑體", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.btnBack.Location = new System.Drawing.Point(32, 179);
+            this.btnBack.Name = "btnBack";
+            this.btnBack.Size = new System.Drawing.Size(95, 45);
+            this.btnBack.TabIndex = 18;
+            this.btnBack.Text = "<<";
+            this.btnBack.UseVisualStyleBackColor = true;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
+            // 
+            // btnPercentage
+            // 
+            this.btnPercentage.Font = new System.Drawing.Font("微軟正黑體", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.btnPercentage.Location = new System.Drawing.Point(32, 315);
+            this.btnPercentage.Name = "btnPercentage";
+            this.btnPercentage.Size = new System.Drawing.Size(95, 45);
+            this.btnPercentage.TabIndex = 19;
+            this.btnPercentage.Text = "%";
+            this.btnPercentage.UseVisualStyleBackColor = true;
+            this.btnPercentage.Click += new System.EventHandler(this.btnPercentage_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(555, 404);
+            this.Controls.Add(this.btnPercentage);
+            this.Controls.Add(this.btnBack);
             this.Controls.Add(this.btnDot);
             this.Controls.Add(this.btnZero);
             this.Controls.Add(this.btnEqual);
@@ -294,6 +320,8 @@ namespace Calculator
         private System.Windows.Forms.Button btnZero;
         private System.Windows.Forms.Button btnEqual;
         private System.Windows.Forms.Button btnAdd;
+        private System.Windows.Forms.Button btnBack;
+        private System.Windows.Forms.Button btnPercentage;
     }
 }
 

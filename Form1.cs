@@ -162,5 +162,27 @@ namespace Calculator
             secondNumber = 0f;
             operators = -1;
         }
+
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            string number = txtNumber.Text;
+            if (number.Length > 1) //若當文字框中沒有任何字符時，點擊倒退按鍵將不會發生任何動作
+            {
+                int length = number.Length;
+                txtNumber.Text = number.Substring(0, length - 1);
+            }
+            else if (number.Length == 1)
+            {
+                txtNumber.Text = "0"; //倒退到最後，顯示「0」
+            }
+        }
+
+        private void btnPercentage_Click(object sender, EventArgs e)
+        {
+            double number = double.Parse(txtNumber.Text);
+            number /= 100; //將百分比轉換為小數
+            //txtNumber.Text = string.Format("{0:P2}", number); //將數字轉換為百分比形式
+            txtNumber.Text = number.ToString(); //顯示小數形式
+        }
     }
 }
